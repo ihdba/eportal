@@ -1,0 +1,24 @@
+{% load static %}
+{# Load the tag library #}
+{% load bootstrap5 %}
+
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Portal | {{ title }}</title>
+    <link rel="stylesheet" href="{% static 'css/custom.css' %}">
+</head>
+<body>
+    <div class="container">
+        {% include "core/main_navbar.html" %} 
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <link rel="stylesheet" href="{% static 'js/custom.js' %}">
+</body>
+</html>
